@@ -1,0 +1,7 @@
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\obj\Debug\Lucky Numbers (Felton).csprojAssemblyReference.cache
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\obj\Debug\Lucky Numbers (Felton).csproj.CoreCompileInputs.cache
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\bin\Debug\Lucky Numbers (Felton).exe.config
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\bin\Debug\Lucky Numbers (Felton).exe
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\bin\Debug\Lucky Numbers (Felton).pdb
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\obj\Debug\Lucky Numbers (Felton).exe
+C:\Users\WeCanCodeIT\source\repos\Lucky Numbers (Felton)\Lucky Numbers (Felton)\obj\Debug\Lucky Numbers (Felton).pdb
