@@ -16,7 +16,7 @@ namespace Lucky_Numbers__Felton_
             int[] randArray = new int[6];
             int[] pickArray = new int[6];
             int numPick = 0;
-            int count = 0;
+
             string jackpot = "384,256.87";
             decimal totalAmt = 384256.87m;
             int correctNum = 0;
@@ -68,11 +68,13 @@ namespace Lucky_Numbers__Felton_
                 for (int index = 0; index < randArray.Length; index++)
                 {
                     randArray[index] = r.Next(minNum, maxNum);
+                   
                     //Console.WriteLine(index);
                     Console.WriteLine("Lucky Number: " + randArray[index]);
                     Console.WriteLine();
                 }
 
+                int count = 0;
                 for (int index = 0; index < randArray.Length; index++)
                 {
                     for (int i = 0; i < pickArray.Length; i++)
@@ -94,7 +96,8 @@ namespace Lucky_Numbers__Felton_
                     decimal matchPot = totalAmt;
                     Console.WriteLine("You guessed " + correctNum + " correctly!");
                     decimal number = correctNum * totalAmt / 6;
-                    //Console.WriteLine(number);
+                //Console.WriteLine(number);
+                Console.WriteLine();
                     string formatNum = number.ToString("00,000.00");
                     Console.WriteLine("You won $" + formatNum + "!");
                     Console.WriteLine();
@@ -112,26 +115,27 @@ namespace Lucky_Numbers__Felton_
                 Console.WriteLine("Thanks for playing!");
                 Console.WriteLine();
                 Console.Write("Would you like to play again? Enter \"yes\" or \"no\": ");
-                Console.WriteLine();
                 string playAgainResponse = Console.ReadLine().ToLower();
                 Console.WriteLine();
-                Console.WriteLine("playAgainResponse", true, Convert.ToBoolean(true));
+                Console.WriteLine();
+                
+                if (playAgainResponse == "no")
+                {
+                    break;
 
-                //if ("playAgainResponse" = "no")
-                //{
-                //    exitResponse = "no";
-                //}
-                //else
-                //    playAgainResponse = "yes";
+                }
+                else
+                    playAgainResponse = "yes";
+
 
 
 
             }
 
-            exitResponse = "no";
             Console.WriteLine();
             Console.WriteLine("Sorry to see you go!");
             Console.WriteLine();
+            
 
         }//Main
     }//class
