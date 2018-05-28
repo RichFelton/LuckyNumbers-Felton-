@@ -19,10 +19,9 @@ namespace Lucky_Numbers__Felton_
 
             string jackpot = "384,256.87";
             decimal totalAmt = 384256.87m;
-            int correctNum = 0;
 
-            Random random = new Random();
-            random.Next(minNum, maxNum);
+            //Random random = new Random();
+            //random.Next(minNum, maxNum);
 
             string exitResponse;
 
@@ -30,18 +29,19 @@ namespace Lucky_Numbers__Felton_
             Console.WriteLine();
             Console.WriteLine("Today's jackpot is: $" + jackpot);
             Console.WriteLine();
-            Console.WriteLine("Win by matching the six randomly selected Lucky Numbers. You can also win by matching fewer than six numbers.");
+            Console.WriteLine("Win by matching the six randomly selected Lucky Numbers. You can also win by matching fewer than all six numbers.");
             Console.WriteLine();
             Console.Write("Do you want to play Lucky Numbers? Type \"yes\" or \"no\": ");
             exitResponse = Console.ReadLine().ToLower();            
 
             while (exitResponse.Equals("yes"))
+
             {
                 Console.WriteLine();
-                    Console.Write("Please enter a starting number as the lowest number of your six numbers: ");
+                    Console.Write("Please enter a starting number as the lowest number of your six Lucky Numbers: ");
                     minNum = int.Parse(Console.ReadLine());
                 Console.WriteLine();
-                    Console.Write("Please enter an ending number as the highest number of your six numbers: ");
+                    Console.Write("Please enter an ending number as the highest number of your six Lucky Numbers: ");
                     maxNum = int.Parse(Console.ReadLine());
                 Console.WriteLine();
 
@@ -60,8 +60,7 @@ namespace Lucky_Numbers__Felton_
                             pickArray[i] = numPick;
                         //Console.WriteLine(i); //checks the current index number
                         //Console.WriteLine(pickArray[i]); //checks the value of the element at current index number
-
-                        
+                 
                 }
 
                 Random r = new Random();
@@ -82,26 +81,23 @@ namespace Lucky_Numbers__Felton_
                         if (randArray[index]==pickArray[i])
                         {
                             count = count + 1;
-
                         }
 
                     }
 
                 }
-
                     //Console.WriteLine("count = " + count);//my check
                     //Console.Write("Type correct number guessed here: ");
                     //correctNum = int.Parse(Console.ReadLine());
-                    correctNum = count;
+
                     decimal matchPot = totalAmt;
-                    Console.WriteLine("You guessed " + correctNum + " correctly!");
-                    decimal number = correctNum * totalAmt / 6;
+                    Console.WriteLine("You guessed " + count + " numbers correctly!");
+                    decimal number = count * totalAmt / 6;
                 //Console.WriteLine(number);
                 Console.WriteLine();
                     string formatNum = number.ToString("00,000.00");
                     Console.WriteLine("You won $" + formatNum + "!");
                     Console.WriteLine();
-
 
                     //Console.WriteLine("$" + number);
                     Console.WriteLine();
