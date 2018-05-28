@@ -89,9 +89,8 @@ namespace Lucky_Numbers__Felton_
                             Console.Write("Type correct number guessed here: ");
                             correctNum = int.Parse(Console.ReadLine());
                             decimal matchPot = totalAmt;
-                    decimal fractionCorrect = correctNum / 6;
                             Console.WriteLine("You guessed " + correctNum + " correctly!");
-                            Console.WriteLine("You won $" + correctNum * totalAmt / 6 + "!");
+                            Console.WriteLine("You won $" + Math.Round(correctNum * totalAmt / 6, 2) + "!");
                             Console.WriteLine();
                             Console.WriteLine();
 
