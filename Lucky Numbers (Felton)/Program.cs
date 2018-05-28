@@ -10,7 +10,6 @@ namespace Lucky_Numbers__Felton_
     {
         static void Main(string[] args)
         {
-
             int minNum = 0;
             int maxNum = 0;
 
@@ -18,54 +17,80 @@ namespace Lucky_Numbers__Felton_
             int[] pickArray = new int[6];
             int numPick = 0;
             int count = 0;
+            string jackpot = "384,256.87";
+            decimal totalAmt = 384256.87m;
+            int correctNum = 0;
 
             Random random = new Random();
             random.Next(minNum, maxNum);
 
-
             string exitResponse;
 
             Console.WriteLine("Welcome to the Lucky Numbers game!");
+            Console.WriteLine("Today's jackpot is: $" + jackpot);
             Console.WriteLine("Win by matching the six randomly selected Lucky Numbers. You can also win by matching fewer than six numbers.");
             Console.Write("Do you want to play Lucky Numbers? Type \"yes\" or \"no\": ");
-            exitResponse = Console.ReadLine().ToLower();
-            
-
+            exitResponse = Console.ReadLine().ToLower();            
 
             while (exitResponse.Equals("yes"))
-            {               
-                Console.WriteLine("Please enter a starting number as the lowest number of your six numbers: ");
-                minNum = int.Parse(Console.ReadLine());
-                Console.WriteLine("Please enter an ending number as the highest number of your six numbers: ");
-                maxNum = int.Parse(Console.ReadLine());
+            {
 
-                Console.Write("Please enter your guess of one of the 6 Lucky Numbers within your selected range: ");
-                numPick = int.Parse(Console.ReadLine());
-                
-                if (numPick < minNum || numPick >= maxNum)
+                    Console.Write("Please enter a starting number as the lowest number of your six numbers: ");
+                    minNum = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                    Console.Write("Please enter an ending number as the highest number of your six numbers: ");
+                    maxNum = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+
+                    for (int i = 0; i < pickArray.Length; i++)
+                    {
+                        Console.Write("Please enter a number within your selected range: ");
+                        numPick = int.Parse(Console.ReadLine());
+                        if (numPick < minNum || numPick >= maxNum)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine("Sorry. The number you have picked is not between " + minNum + " and " + maxNum + '.');
+                            i = i - 1; //resets the index for a valid number (within the range)
+                            Console.WriteLine();
+                        }
+                        else
+                            pickArray[i] = numPick;
+                        //Console.WriteLine(i); //checks the current index number
+                        //Console.WriteLine(pickArray[i]); //checks the value of the current index number
+                }
+
+                Random r = new Random();
+                for (int index = 0; index < randArray.Length; index++)
                 {
-                    Console.WriteLine("Sorry. The number you have picked is not between " + minNum + " and " + maxNum + '.');
-                    Console.Write("Please enter a number between " + minNum + " and " + maxNum + ": ");
+                    randArray[index] = r.Next(minNum, maxNum);
+                    Console.WriteLine(index);
+                    Console.WriteLine("Lucky Number: " + randArray[index]);
                 }
-                else
-                    Console.Write("Please enter another number: ");
-                {  
-                
-
-                }
-
 
                 for (int i = 0; i < pickArray.Length; i++)
                 {
+                    Console.WriteLine(i);
                     for (int j = 0; j < randArray.Length; j++)
+                        Console.WriteLine(j);
                     {
+                        int j = 0;
                         if (pickArray[i] == randArray[j])
-                            {
+                        {
                             count += 1;
+                            Console.WriteLine(count);
+
+                            decimal matchPot = totalAmt / correctNum;
+                            Console.WriteLine("You guessed " + correctNum + " correctly!");
+                            Console.WriteLine("You won $" + matchPot + "!");
+
+
                         }
                     }
+
+                Console.Write("Would you like to play again? Enter \"yes\" or \"no\": ");
+                string playAgainResponse = Console.ReadLine();
+
                 }
-                
 
 
 
@@ -74,14 +99,15 @@ namespace Lucky_Numbers__Felton_
 
 
 
+
+                //}
+                //while (exitResponse.Equals("no"))
+                //{
+                //Console.WriteLine("Are you sure you really want to quit? Type \"yes\" or \"no\", but remember, nobody likes a quitter.");
+                //exitResponse = Console.ReadLine().ToLower();
+                exitResponse = "no";
             }
-            while (exitResponse.Equals("no"))
-            {
-            Console.WriteLine("Are you sure you really want to quit? Type \"yes\" or \"no\", but remember, nobody likes a quitter.");
-            exitResponse = Console.ReadLine().ToLower();
-            
-            }
-            
+
 
 
         }//Main
