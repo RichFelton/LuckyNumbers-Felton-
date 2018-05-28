@@ -27,14 +27,17 @@ namespace Lucky_Numbers__Felton_
             string exitResponse;
 
             Console.WriteLine("Welcome to the Lucky Numbers game!");
+            Console.WriteLine();
             Console.WriteLine("Today's jackpot is: $" + jackpot);
+            Console.WriteLine();
             Console.WriteLine("Win by matching the six randomly selected Lucky Numbers. You can also win by matching fewer than six numbers.");
+            Console.WriteLine();
             Console.Write("Do you want to play Lucky Numbers? Type \"yes\" or \"no\": ");
             exitResponse = Console.ReadLine().ToLower();            
 
             while (exitResponse.Equals("yes"))
             {
-
+                Console.WriteLine();
                     Console.Write("Please enter a starting number as the lowest number of your six numbers: ");
                     minNum = int.Parse(Console.ReadLine());
                 Console.WriteLine();
@@ -57,27 +60,45 @@ namespace Lucky_Numbers__Felton_
                             pickArray[i] = numPick;
                         //Console.WriteLine(i); //checks the current index number
                         //Console.WriteLine(pickArray[i]); //checks the value of the current index number
+
+                        
                 }
 
                 Random r = new Random();
                 for (int index = 0; index < randArray.Length; index++)
                 {
                     randArray[index] = r.Next(minNum, maxNum);
-                    Console.WriteLine(index);
+                    //Console.WriteLine(index);
                     Console.WriteLine("Lucky Number: " + randArray[index]);
+                    Console.WriteLine();
                 }
+
+                for (int index = 0; index < randArray.Length; index++)
+                {
+                    for (int i = 0; i < pickArray.Length; i++)
+                    {
+                        if (randArray[index]==pickArray[i])
+                        {
+                            count = count + 1;
+
+                        }
+
+                    }
+
+                }
+                Console.WriteLine("count = " + count);
 
                 for (int i = 0; i < pickArray.Length; i++)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(i);//my test
                     for (int j = 0; j < randArray.Length; j++)
-                        Console.WriteLine(j);
+                        Console.WriteLine(j);//my test
                     {
                         int j = 0;
                         if (pickArray[i] == randArray[j])
                         {
-                            count += 1;
-                            Console.WriteLine(count);
+                            count = count + 1;
+
 
 
 
@@ -86,36 +107,51 @@ namespace Lucky_Numbers__Felton_
 
 
                     }
-                            Console.Write("Type correct number guessed here: ");
-                            correctNum = int.Parse(Console.ReadLine());
-                            decimal matchPot = totalAmt;
-                            Console.WriteLine("You guessed " + correctNum + " correctly!");
-                            Console.WriteLine("You won $" + Math.Round(correctNum * totalAmt / 6, 2) + "!");
-                            Console.WriteLine();
-                            Console.WriteLine();
+                    Console.WriteLine("count = " + count);
+                    //Console.Write("Type correct number guessed here: ");
+                    //correctNum = int.Parse(Console.ReadLine());
+                    correctNum = count;
+                    decimal matchPot = totalAmt;
+                    Console.WriteLine("You guessed " + correctNum + " correctly!");
+                    decimal number = correctNum * totalAmt / 6;
+                    //Console.WriteLine(number);
+                    string formatNum = number.ToString("00,000.00");
+                    Console.WriteLine("You won $" + formatNum + "!");
+                    Console.WriteLine();
 
-                Console.Write("Would you like to play again? Enter \"yes\" or \"no\": ");
-                string playAgainResponse = Console.ReadLine();
+
+                    Console.WriteLine("$" + number);
+                    Console.WriteLine();
+
+
 
                 }
 
 
+                Console.WriteLine();
+                Console.WriteLine("Thanks for playing!");
+                Console.WriteLine();
+                Console.Write("Would you like to play again? Enter \"yes\" or \"no\": ");
+                Console.WriteLine();
+                string playAgainResponse = Console.ReadLine().ToLower();
+                Console.WriteLine();
+                Console.WriteLine("playAgainResponse", true, Convert.ToBoolean(true));
 
-
-
-
-
-
-
-                //}
-                //while (exitResponse.Equals("no"))
+                //if ("playAgainResponse" = "no")
                 //{
-                //Console.WriteLine("Are you sure you really want to quit? Type \"yes\" or \"no\", but remember, nobody likes a quitter.");
-                //exitResponse = Console.ReadLine().ToLower();
-                exitResponse = "no";
+                //    exitResponse = "no";
+                //}
+                //else
+                //    playAgainResponse = "yes";
+
+
+
             }
 
-
+            exitResponse = "no";
+            Console.WriteLine();
+            Console.WriteLine("Sorry to see you go!");
+            Console.WriteLine();
 
         }//Main
     }//class
