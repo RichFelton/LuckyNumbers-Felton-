@@ -79,13 +79,21 @@ namespace Lucky_Numbers__Felton_
                             count += 1;
                             Console.WriteLine(count);
 
-                            decimal matchPot = totalAmt / correctNum;
-                            Console.WriteLine("You guessed " + correctNum + " correctly!");
-                            Console.WriteLine("You won $" + matchPot + "!");
+
 
 
                         }
+
+
                     }
+                            Console.Write("Type correct number guessed here: ");
+                            correctNum = int.Parse(Console.ReadLine());
+                            decimal matchPot = totalAmt;
+                    decimal fractionCorrect = correctNum / 6;
+                            Console.WriteLine("You guessed " + correctNum + " correctly!");
+                            Console.WriteLine("You won $" + correctNum * totalAmt / 6 + "!");
+                            Console.WriteLine();
+                            Console.WriteLine();
 
                 Console.Write("Would you like to play again? Enter \"yes\" or \"no\": ");
                 string playAgainResponse = Console.ReadLine();
