@@ -59,7 +59,7 @@ namespace Lucky_Numbers__Felton_
                         else
                             pickArray[i] = numPick;
                         //Console.WriteLine(i); //checks the current index number
-                        //Console.WriteLine(pickArray[i]); //checks the value of the current index number
+                        //Console.WriteLine(pickArray[i]); //checks the value of the element at current index number
 
                         
                 }
@@ -86,28 +86,8 @@ namespace Lucky_Numbers__Felton_
                     }
 
                 }
-                Console.WriteLine("count = " + count);
 
-                for (int i = 0; i < pickArray.Length; i++)
-                {
-                    Console.WriteLine(i);//my test
-                    for (int j = 0; j < randArray.Length; j++)
-                        Console.WriteLine(j);//my test
-                    {
-                        int j = 0;
-                        if (pickArray[i] == randArray[j])
-                        {
-                            count = count + 1;
-
-
-
-
-
-                        }
-
-
-                    }
-                    Console.WriteLine("count = " + count);
+                    //Console.WriteLine("count = " + count);//my check
                     //Console.Write("Type correct number guessed here: ");
                     //correctNum = int.Parse(Console.ReadLine());
                     correctNum = count;
@@ -120,12 +100,12 @@ namespace Lucky_Numbers__Felton_
                     Console.WriteLine();
 
 
-                    Console.WriteLine("$" + number);
+                    //Console.WriteLine("$" + number);
                     Console.WriteLine();
 
 
 
-                }
+                
 
 
                 Console.WriteLine();
